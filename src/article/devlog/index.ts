@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 
 function loadMarkdown(slug: string) {
-  const filePath = path.join(process.cwd(), "src/article/devlog", `${slug}.mdx`);
+  const filePath = path.join(process.cwd(), "src/article/devlog", `${slug}.md`);
   return fs.readFileSync(filePath, "utf-8");
 }
 

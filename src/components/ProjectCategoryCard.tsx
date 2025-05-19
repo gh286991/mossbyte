@@ -13,7 +13,7 @@ export default function ProjectCategoryCard({ emoji, title, subtitle, desc }: Pr
     <div className="w-[3px] bg-[moss-red] rounded-sm mr-3 sm:mr-5" />
       <span className="text-xl sm:text-2xl flex items-start pt-0.5 min-w-[2em]">{emoji}</span>
       <div className="flex-1 min-w-0">
-        <div className="pixel-font text-sm sm:text-base text-moss-light mb-1 break-words">
+        <div className="pixel-font mb-1">
           {title} {subtitle && <span className="text-moss-accent text-xs sm:text-sm">({subtitle})</span>}
         </div>
         <div className="text-xs text-moss-light/80 break-words">{desc}</div>

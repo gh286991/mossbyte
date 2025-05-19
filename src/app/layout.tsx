@@ -18,6 +18,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Mossbyte Studio",
   description: "Mossbyte Studio 官方網站，像素遊戲、開發誌、教學與 Podcast。",
+  icons: {
+    icon: [
+      { url: '/icons/favicon.png', sizes: '32x32' },
+    ]
+  },
 };
 
 export default function RootLayout({
@@ -30,8 +35,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        {children}
+        <div className="max-w-5xl mx-auto px-4 w-full">
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );
