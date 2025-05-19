@@ -1,22 +1,17 @@
-import Navbar from '../components/Navbar';
 import ProfileCard from '../components/ProfileCard';
 import ProjectCategoryCard from '../components/ProjectCategoryCard';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#142617] text-[#b6f7c1] flex flex-col items-center px-2 sm:px-0">
-      {/* 導覽列 */}
-      <Navbar />
-
-      {/* Profile 區塊 */}
-      <ProfileCard />
-
-      {/* 內容區塊 */}
-      <div className="w-full max-w-3xl flex flex-col gap-8 mt-2">
+    <div className="min-h-screen flex flex-col items-center">
+      <div className="mx-auto flex flex-col gap-8 px-2 sm:px-4 md:px-0">
+        {/* Profile 區塊 */}
+        <ProfileCard />
         {/* PROJECT CATEGORIES */}
         <section className="bg-transparent rounded-md p-0 mb-4">
-          <div className="border-b-2 border-dashed border-[#3aff7a] pb-2 mb-4 flex items-center gap-2">
-            <span className="text-[#3aff7a] text-base pixel-font">🗂</span>
+          <div className="border-b-2 border-dashed pb-2 mb-4 flex items-center gap-2">
+            <span className="text-base pixel-font">🗂</span>
             <span className="pixel-font text-lg tracking-widest">PROJECT CATEGORIES</span>
           </div>
           <ul className="flex flex-col gap-4">
@@ -26,18 +21,19 @@ export default function Home() {
             <li><ProjectCategoryCard emoji="🎤" title="Podcast 宣傳" desc="我們在 podcast 中聊遊戲、開發生活與創作理念，附上各集整理連結與簡介。" /></li>
           </ul>
         </section>
-
         {/* DEVLOG */}
-        <section className="bg-[#101d13] rounded-md border-2 border-[#3aff7a] p-6 shadow-[0_0_8px_#3aff7a33]">
-          <div className="border-b-2 border-dashed border-[#3aff7a] pb-2 mb-4 flex items-center gap-2">
+        <section className="bg-[#101d13] rounded-md border-2 border-[#3aff7a] p-4 sm:p-6 shadow-[0_0_8px_#3aff7a33]">
+          <div className="border-b-2 border-dashed pb-2 mb-4 flex items-center gap-2">
             <span className="text-[#3aff7a] text-base pixel-font">📝</span>
             <span className="pixel-font text-lg tracking-widest">DEVLOG</span>
           </div>
           <ul className="flex flex-col gap-0">
             <li className="mb-4 pb-4 border-b border-[#244c2a]">
-              <div className="pixel-font text-base mb-1">🌲 BUILDING THE FOREST LEVEL</div>
-              <div className="text-xs text-[#b6f7c1]/80 mb-1">April 10, 2024</div>
-              <div className="text-sm">Just wrapped up the initial design for the forest level. The challenge was capturing the lush, vibrant feel while keeping performance tight on lower-end systems.</div>
+              <Link href="/blog/devlog/log1" className="block group">
+                <div className="pixel-font text-base mb-1 group-hover:text-[#3aff7a] transition">🌲 BUILDING THE FOREST LEVEL</div>
+                <div className="text-xs text-[#b6f7c1]/80 mb-1">April 10, 2024</div>
+                <div className="text-sm">Just wrapped up the initial design for the forest level. The challenge was capturing the lush, vibrant feel while keeping performance tight on lower-end systems.</div>
+              </Link>
             </li>
             <li>
               <div className="pixel-font text-base mb-1">📝 DEVLOG IS LIVE</div>
@@ -46,12 +42,11 @@ export default function Home() {
             </li>
           </ul>
         </section>
+        {/* 頁尾 */}
+        <footer className="mt-12 mb-2 text-xs text-[#b6f7c1]/60 text-center w-full pixel-font">
+          © 2025 Mossbyte Studio — All rights reserved.
+        </footer>
       </div>
-
-      {/* 頁尾 */}
-      <footer className="mt-12 mb-2 text-xs text-[#b6f7c1]/60 text-center w-full pixel-font">
-        © 2025 Mossbyte Studio — All rights reserved.
-      </footer>
     </div>
   );
 }
