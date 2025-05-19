@@ -5,7 +5,7 @@ export function generateStaticParams() {
   return Object.keys(devlogData).map((slug) => ({ slug }));
 }
 
-export default async function DevlogPage({ params }: { params: { slug: string } }) {
+export default async function DevlogPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   if (!slug || typeof slug !== 'string') {
     return <div>無效的文章參數</div>;
@@ -16,9 +16,8 @@ export default async function DevlogPage({ params }: { params: { slug: string } 
   return (
     <main className="prose mx-auto">
       <div className="pixel-font text-sm sm:text-base text-moss-light mb-1 break-words">
-        <ReactMarkdown >{post.content}</ReactMarkdown>
+        <ReactMarkdown>{post.content}</ReactMarkdown>
       </div>
-
-    </main >
+    </main>
   );
 } 
