@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from '../components/Navbar';
+import getBasePath from '@/lib/getBasePath';
 
 import "./globals.css";
 
@@ -14,12 +15,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const iconPath = getBasePath('/icons/favicon.png');
+
 export const metadata: Metadata = {
   title: "Mossbyte Studio",
   description: "Mossbyte Studio 官方網站，像素遊戲、開發誌、教學與 Podcast。",
   icons: {
     icon: [
-      { url: '/icons/favicon.png', sizes: '32x32' },
+      { url: iconPath, sizes: '32x32' },
     ]
   },
 };

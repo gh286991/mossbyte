@@ -6,7 +6,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full bg-transparent relative">
+    <header className="w-full bg-transparent relative mt-1 lg:mt-4">
       <div className="flex items-center justify-between">
         {/* Logo + 標題 */}
         <div className="flex items-center">
@@ -32,7 +32,7 @@ export default function Navbar() {
         </button>
       </div>
       {/* 手機版展開選單（absolute 蓋在 header 上） */}
-      <nav className={`md:hidden absolute top-16 left-0 w-full flex flex-col items-center gap-2 bg-[#14291b] rounded-lg py-6 shadow-lg z-50 transition-all duration-300 ease-in-out ${
+      <nav className={`md:hidden absolute top-10 left-0 w-full flex flex-col items-center gap-2 bg-[#14291b] rounded-lg py-6 shadow-lg z-50 transition-all duration-300 ease-in-out ${
         open 
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 -translate-y-5 pointer-events-none'
